@@ -27,7 +27,7 @@ func main() {
 	apiRouter.HandleFunc("", handlers.GetAllOrders).Methods("GET")
 	apiRouter.HandleFunc("/{id:[0-9]+}", handlers.GetOrder).Methods("GET")
 	apiRouter.HandleFunc("", handlers.CreateOrder).Methods("POST")
-	apiRouter.HandleFunc("/{id:[0-9]+}", handlers.UpdateOrder).Methods("PUT")
+	apiRouter.HandleFunc("", handlers.UpdateOrder).Methods("PUT")
 	apiRouter.HandleFunc("/{id:[0-9]+}", handlers.DeleteOrder).Methods("DELETE")
 
 	http.ListenAndServe(":3000", router)
